@@ -4,6 +4,8 @@
 
 ### The encyclopedia anyone can read & write
 
+> Originally completed for Harvard's *CS50's Web Programming with Python and JavaScript* and later rebuilt into the production-oriented full-stack application documented here.
+
 A modern, full-stack, production-ready Wikipedia-style encyclopedia.
 Built with **Django REST Framework**, **PostgreSQL**, **Redis** on the backend and
 **React 19 + Vite + TypeScript + Tailwind** on the frontend.
