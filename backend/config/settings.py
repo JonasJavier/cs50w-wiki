@@ -44,11 +44,7 @@ def clean_env_value(value: str) -> str:
 def env_csv(name: str, default: str = "") -> list[str]:
     """Read comma-separated env vars safely."""
     raw_value = clean_env_value(env(name, default=default))
-    return [
-        clean_env_value(item)
-        for item in raw_value.split(",")
-        if clean_env_value(item)
-    ]
+    return [clean_env_value(item) for item in raw_value.split(",") if clean_env_value(item)]
 
 
 # --------------------------------------------------------------------------- #
@@ -199,9 +195,7 @@ REST_FRAMEWORK = {
         "rest_framework_simplejwt.authentication.JWTAuthentication",
         "rest_framework.authentication.SessionAuthentication",
     ),
-    "DEFAULT_PERMISSION_CLASSES": (
-        "rest_framework.permissions.IsAuthenticatedOrReadOnly",
-    ),
+    "DEFAULT_PERMISSION_CLASSES": ("rest_framework.permissions.IsAuthenticatedOrReadOnly",),
     "DEFAULT_PAGINATION_CLASS": "apps.common.pagination.DefaultPagination",
     "PAGE_SIZE": 12,
     "DEFAULT_FILTER_BACKENDS": (
