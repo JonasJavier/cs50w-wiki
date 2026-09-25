@@ -97,4 +97,4 @@ def test_categories_endpoint(api_client, category):
 def test_health_endpoint(api_client):
     response = api_client.get(reverse("health"))
     assert response.status_code == 200
-    assert response.data["status"] == "ok"
+    assert response.json()["status"] == "ok"
